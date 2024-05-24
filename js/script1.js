@@ -1,9 +1,22 @@
-fetch("https://thronesapi.com/api/v2/Characters")
-.then(response => response.json())
+async function fetchData(url) {
+
+  let response = await fetch(url)
+
+  let data = await response.json()
+
+  return data
+}
+
+fetchData("https://thronesapi.com/api/v2/Characters")
 .then(json => {
 
     console.log(json)
     for (let i = 0; i<json.length; i++) {
+
+        const a = document.createElement("a")
+        
+        a.setAttribute("href", `detalles.html?id=${json[i].id}`);
+        a.setAttribute("class", "character-link");
 
         const div1 = document.createElement("div")
 
@@ -29,22 +42,23 @@ fetch("https://thronesapi.com/api/v2/Characters")
         h5.setAttribute("class", "card-title")
         h5.innerHTML = json[i].fullName;
         
-        const p1 = document.createElement("p")
+        // const p1 = document.createElement("p")
 
-        p1.setAttribute("class", "card-text")
-        p1.innerHTML = "Titulo: "+json[i].title;
+        // p1.setAttribute("class", "card-text")
+        // p1.innerHTML = "Titulo: "+json[i].title;
 
-        const p2 = document.createElement("p")
+        // const p2 = document.createElement("p")
 
-        p2.setAttribute("class", "card-text")
-        p2.innerHTML = "familia: "+json[i].family;
+        // p2.setAttribute("class", "card-text")
+        // p2.innerHTML = "familia: "+json[i].family;
 
         div3.appendChild(h5)
-        div3.appendChild(p1)
-        div3.appendChild(p2)
+        // div3.appendChild(p1)
+        // div3.appendChild(p2)
         div2.appendChild(image)
         div2.appendChild(div3)
-        div1.appendChild(div2)
+        a.appendChild(div2)
+        div1.appendChild(a)
 
         const contenedor = document.getElementsByClassName("row")[0]
         contenedor.appendChild(div1)

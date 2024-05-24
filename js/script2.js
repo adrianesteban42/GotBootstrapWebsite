@@ -1,5 +1,13 @@
-fetch("https://thronesapi.com/api/v2/Continents")
-.then(response => response.json())
+async function fetchData(url) {
+
+    let response = await fetch(url)
+  
+    let data = await response.json()
+  
+    return data
+}
+
+fetchData("https://thronesapi.com/api/v2/Continents")
 .then(json => {
 
     console.log(json)

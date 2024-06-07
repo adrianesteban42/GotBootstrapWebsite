@@ -41,20 +41,8 @@ fetchData("https://thronesapi.com/api/v2/Characters")
 
         h5.setAttribute("class", "card-title")
         h5.innerHTML = json[i].fullName;
-        
-        // const p1 = document.createElement("p")
-
-        // p1.setAttribute("class", "card-text")
-        // p1.innerHTML = "Titulo: "+json[i].title;
-
-        // const p2 = document.createElement("p")
-
-        // p2.setAttribute("class", "card-text")
-        // p2.innerHTML = "familia: "+json[i].family;
 
         div3.appendChild(h5)
-        // div3.appendChild(p1)
-        // div3.appendChild(p2)
         div2.appendChild(image)
         div2.appendChild(div3)
         a.appendChild(div2)

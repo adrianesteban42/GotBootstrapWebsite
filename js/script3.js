@@ -68,33 +68,5 @@ fetchData("https://thronesapi.com/api/v2/Characters/"+characterId)
     const contenedor = document.getElementsByClassName("row")[0]
     contenedor.appendChild(div1)
 
-    // const div = document.createElement("div")
-
-    // div1.setAttribute("class", "div col-1")
-
-    // const image = document.createElement("img")
-
-    // image.setAttribute("src" , json.imageUrl)
-    // image.setAttribute("class", "card-img-top")
-    // image.setAttribute("alt", "...")
-
-    // const h1 = document.createElement("h1")
-
-    // h1.innerHTML = json.fullName;
-    
-    // const h3 = document.createElement("h3")
-
-    // h3.innerHTML = "Titulo: "+json.title;
-
-    // const h3_2 = document.createElement("h3")
-
-    // h3_2.innerHTML = "familia: "+json.family;
-
-    // const contenedor = document.getElementsByClassName("row")[0]
-    // contenedor.appendChild(image)
-    // contenedor.appendChild(h1)
-    // contenedor.appendChild(h3)
-    // contenedor.appendChild(h3_2)
-
 })
 .catch(error => console.log(error))

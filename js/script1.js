@@ -7,10 +7,6 @@ async function fetchData(url) {
   return data
 }
 
-$(document).ready(function(){
-  $('#myTable').dataTable();
-});
-
 fetchData("https://thronesapi.com/api/v2/Characters")
 .then(json => {
 
@@ -22,7 +18,7 @@ fetchData("https://thronesapi.com/api/v2/Characters")
         a.setAttribute("href", `detalles.html?id=${json[i].id}`);
         a.setAttribute("class", "character-link");
 
-        const tbody = document.createElement("tbody")
+        // const tbody = document.createElement("tbody")
 
         const tr = document.createElement("tr")
 
@@ -42,13 +38,14 @@ fetchData("https://thronesapi.com/api/v2/Characters")
         a.appendChild(image)
         td2.appendChild(a)
         tr.appendChild(td2)
-        tbody.appendChild(tr)
+        // tbody.appendChild(tr)
 
-        const contenedor = document.getElementsByClassName("table")[0]
-        contenedor.appendChild(tbody)
-
-        
+        const contenedor = document.getElementsByClassName("tbody")[0]
+        contenedor.appendChild(tr)
     }
+    $(document).ready(function(){
+      $('#myTable').dataTable();
+    });
 })
 .catch(error => console.log(error))
 
